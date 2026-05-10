@@ -9,11 +9,8 @@ if __name__ == "__main__":
     # 定義資料庫連線字串（MySQL 資料庫）
     # 格式：mysql+pymysql://使用者:密碼@主機:port/資料庫名稱
     engine = create_engine(
-        f"mysql+pymysql://{MYSQL_ACCOUNT}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/tibame"
+        f"mysql+pymysql://{MYSQL_ACCOUNT}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/mydb"
     )
-
-    # 建立連線（可用於 Pandas、原生 SQL 操作）
-    connect = engine.connect()
 
     # 建立一個空的 DataFrame 並加入一個欄位 column_1，內容是 0~9
     df = pd.read_csv(
@@ -25,7 +22,7 @@ if __name__ == "__main__":
     # index=False 表示不上傳索引欄位
     df.to_sql(
         "taiwan_stock_margin_purchase_short_sale",
-        con=connect,
+        con=engine,
         if_exists="replace",
         index=False,
     )

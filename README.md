@@ -329,7 +329,7 @@ FROM ubuntu:22.04               ← 從乾淨的 Ubuntu 開始
 
 #### 上傳 taiwan_stock_price.csv
 
-    uv run --env-file=.env python crawler/upload_taiwan_stock_price_to_mysql.py
+    uv run python crawler/upload_taiwan_stock_price_to_mysql.py
 
 #### login
     gcloud auth application-default login

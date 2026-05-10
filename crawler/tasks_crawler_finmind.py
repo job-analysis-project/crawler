@@ -45,17 +45,14 @@ def upload_data_to_mysql(df: pd.DataFrame):
         # 建立 SQLAlchemy 引擎物件
         engine = create_engine(address)
 
-        # 建立連線（可用於 Pandas、原生 SQL 操作）
-        connect = engine.connect()
-
         df.to_sql(
             "TaiwanStockPrice",
-            con=connect,
+            con=engine,
             if_exists="append",
             index=False,
         )
     except Exception as e:
-        pass
+        print(e)
 
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
