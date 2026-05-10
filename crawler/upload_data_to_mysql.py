@@ -23,8 +23,8 @@ if __name__ == "__main__":
     # index=False 表示不上傳索引欄位
     df.to_sql(
         "test_upload",
-        con=connect,
-        if_exists="replace",
+        con=engine,
+        if_exists="append",
         index=False,
     )
 

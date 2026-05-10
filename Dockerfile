@@ -1,4 +1,4 @@
-# 使用 Ubuntu 22.04 作為基礎映像檔
+ # 使用 Ubuntu 22.04 作為基礎映像檔
 FROM ubuntu:22.04
 
 # 更新套件列表，並安裝 curl 與 ca-certificates（下載 uv 所需）
