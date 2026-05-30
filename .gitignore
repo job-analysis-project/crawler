@@ -6,4 +6,5 @@
 *.pyc
 *.egg-info
 .cache
-build/
+build/*.csv
+*.csv.*
