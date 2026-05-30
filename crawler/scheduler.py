@@ -26,7 +26,7 @@ def send_crawler_stock_price_task():
 
 
 def main():
-    # 建立背景排程器，設定時區為 Asia/Taipei
+    # 建立背景排程器，設定時區為 Asia/Taipei 
     scheduler = BackgroundScheduler(
         timezone="Asia/Taipei",
     )

@@ -62,3 +62,4 @@ for _, row in df.iterrows():
     # 執行 SQL 語句，寫入資料庫
     with engine.begin() as conn:
         conn.execute(update_stmt)
+print("資料寫入完成，請到 mydb.test_duplicate 查看")
