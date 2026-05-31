@@ -98,5 +98,5 @@ def cake_crawler(search_terms="data engineer"):
                 job_feature["management_resp"] = label_div.get_text(strip=True)
             
         parsed_jobs.append(job_feature)
-    print(parsed_jobs)
-    # return parsed_jobs
+        
+    return parsed_jobs
