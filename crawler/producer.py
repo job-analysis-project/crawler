@@ -4,10 +4,11 @@
 
 # 從 tasks.py 匯入 crawler 這個 Celery task 函式
 # 注意這裡不是直接呼叫函式, 而是把它當作「任務」送出去
-from crawler.tasks import crawler
+from crawler.tasks import cake_crawler
+
 
 # .delay() 是 Celery 提供的快捷方法, 用來「非同步」派送任務
 # 寫 crawler.delay(x=0) 等同於 crawler.apply_async(kwargs={"x": 0})
 # 呼叫後會立刻回傳, 任務會被丟到 RabbitMQ, 等 worker 拿去執行
 # 如果改成 crawler(x=0) 則會在本地「同步」執行, 失去分散式的意義
-crawler.delay(x=0)
+cake_crawler.delay(search_terms="data engineer")
